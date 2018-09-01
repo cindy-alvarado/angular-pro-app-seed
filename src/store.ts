@@ -4,11 +4,16 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/pluck';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-export interface State {
-  [key: string]: any
-}
+import { User } from './auth/shared/services/auth/auth.service';
 
-const state: State = {};
+export  interface State  {
+    user: User,
+    [key: string] : any
+};
+
+const state: State = {
+  user : undefined
+};
 
 export class Store {
 
