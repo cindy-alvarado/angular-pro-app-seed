@@ -36,6 +36,14 @@ export class AuthService {
         private af: AngularFireAuth
     ) {}
 
+    get user() {
+        return this.af.auth.currentUser;
+    }
+
+    get authState() {
+        return this.af.authState;
+    }
+
     // returning a promise here (calls a function then returns a object at a later time)
     createUser(email: string, password: string) {
         return this.af.auth
